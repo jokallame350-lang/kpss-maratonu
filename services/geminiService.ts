@@ -3,7 +3,8 @@ import { StudyContent, Flashcard, ExamQuestion } from "../types";
 
 // API Anahtarı Yapılandırması
 // Projeyi indirdiğinizde .env dosyasındaki API_KEY'i okur.
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+// Hem ismi düzelttik hem de 'genAI' yerine 'ai' yaptık (aşağıda hata vermesin diye)
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 // Helper function to retry failed requests
 async function generateContentGeneric(model: string, prompt: string, schema: any, retries = 3): Promise<string> {
