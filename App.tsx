@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import React, { useState, useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { Dashboard } from './components/Dashboard';
@@ -100,6 +101,9 @@ export default function App() {
       {view === 'flashcard' && (
         <FlashcardMode onBack={goHome} />
       )}
+
+      {/* Analytics bileşenini buraya ekledim */}
+      <Analytics />
     </Layout>
   );
 }
